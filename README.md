@@ -168,7 +168,7 @@ END FUNCTION
 
 Open the terminal, and download this repository:
 
-<pre><code>git clone .......................</code></pre>
+<pre><code>git clone https://github.com/ParinazRmp/SLAM-with-Gmapping-and-Moving-Base.git </code></pre>
 
 Copy or move the folder final_assignment into the src folder of your ROS workspace.<br> 
 Go into the root folder of your ROS workspace and type: 
