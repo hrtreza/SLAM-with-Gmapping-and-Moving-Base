@@ -10,8 +10,8 @@ Control of a robot in a simulated environment.
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#Introduction">Introduction</a></li>
-    <li><a href="#How_it_works">How_it_works</a></li>
     <li><a href="#Installing_and_Running">Installing_and_Running</a></li>
+    <li><a href="#How_it_works">How_it_works</a></li>
     <li><a href="#PseudoCode">PseudoCode</a></li>
     <li><a href="#Simulation_and_Results">Simulation_and_Results</a></li>
     <li><a href="#Robot_Movement_Improvement">Robot_Movement_Improvement</a></li>
@@ -45,6 +45,28 @@ The map is this one:<br>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/94115975/221690077-f9f397e6-4ba1-4c01-b25a-99ee7c71c638.png" width="900" height="500">
 </p>
+
+
+# Installing_and_Running
+
+Open the terminal, and download this repository:
+
+<pre><code>git clone https://github.com/ParinazRmp/SLAM-with-Gmapping-and-Moving-Base.git </code></pre>
+
+Copy or move the folder final_assignment into the src folder of your ROS workspace.<br> 
+Go into the root folder of your ROS workspace and type: 
+
+<pre><code>catkin_make</code></pre>
+
+By using the xterm tool, it is possible to launch all nodes using the launch file final_assignment.launch, but first we need to install xterm:
+
+<pre><code>sudo apt install xterm</code></pre>
+
+Now we can type:
+
+<pre><code>roslaunch final_assignment final_assignment.launch</code></pre>
+
+
 
 # How_it_works
 
@@ -161,27 +183,6 @@ END FUNCTION
 
 # Simulation_and_Results
 ![rosgraph](https://user-images.githubusercontent.com/94115975/221713615-f280fb6c-fa7d-4b0c-bf68-9f28d757a033.png)
-
-
-
-# Installing_and_Running
-
-Open the terminal, and download this repository:
-
-<pre><code>git clone https://github.com/ParinazRmp/SLAM-with-Gmapping-and-Moving-Base.git </code></pre>
-
-Copy or move the folder final_assignment into the src folder of your ROS workspace.<br> 
-Go into the root folder of your ROS workspace and type: 
-
-<pre><code>catkin_make</code></pre>
-
-By using the xterm tool, it is possible to launch all nodes using the launch file final_assignment.launch, but first we need to install xterm:
-
-<pre><code>sudo apt install xterm</code></pre>
-
-Now we can type:
-
-<pre><code>roslaunch final_assignment final_assignment.launch</code></pre>
 
 
 # Robot_Movement_Improvement
