@@ -12,7 +12,7 @@ Control of a robot in a simulated environment.
     <li><a href="#Introduction">Introduction</a></li>
     <li><a href="#How_it_works">How_it_works</a></li>
     <li><a href="#Installing_and_Running">Installing_and_Running</a></li>
-    <li><a href="#PsudoCode">PsudoCode</a></li>
+    <li><a href="#PseudoCode">PseudoCode</a></li>
     <li><a href="#Simulation_and_Results">Simulation_and_Results</a></li>
     <li><a href="#Robot_Movement_Improvement">Robot_Movement_Improvement</a></li>
   </ol>
@@ -35,12 +35,16 @@ You can use the user interface to:
 </ol>
 
 The map is this one:<br>
-<br>Rviz:<br>
-<img src="----------------" width="275" height="377">
-<br><br>Gazebo:<br>
-<img src="----------------" width="500" height="259">
+## Gazebo:
+<p align="center">
+<img src="https://user-images.githubusercontent.com/94115975/221689972-e9425967-7ca6-4488-aab5-f66a1d31d0a5.png" width="900" height="500">
+</p>
 
-<a name="how"></a>
+## Rviz:
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/94115975/221690077-f9f397e6-4ba1-4c01-b25a-99ee7c71c638.png" width="900" height="500">
+</p>
 
 # How_it_works
 
@@ -84,55 +88,53 @@ You can change 3 constant values to modify some aspect of the program:
         <li>MAX_TIME: maximum time to reach a goal (microseconds).</li>
     </ul>
 
-
+## PseudoCode
 A short description of the program behavior is this one:
 <pre><code>
 FUNCTION manualDriving
-    WHILE user does not quit
+    WHILE user input is not to quit
         TAKE user input through the keyboard
-        EXEC corresponding task
+        EXECUTE corresponding task
         PUBLISH new robot velocity
-    ENDWHILE
-ENDFUNCTION
+    END WHILE
+END FUNCTION
 
 FUNCTION drivingAssistance WITH (msg)
     COMPUTE minimum distance on the right
     COMPUTE minimum distance in the middle
     COMPUTE minimum distance on the left
     
-    IF driving assistance is enabled AND
-        the robot is going against a wall THEN
+    IF driving assistance is enabled AND the robot is going against a wall THEN
         SET robot velocity TO 0
         PUBLISH robot velocity
-    ENDIF
+    END IF
 
     IF a goal position is set THEN
         COMPUTE the time elapsed
         IF the time elapsed IS GREATER THAN 120 seconds THEN
             DELETE current goal
-        ENDIF
-    ENDIF
-ENDFUNCTION
+        END IF
+    END IF
+END FUNCTION
 
 FUNCTION currentStatus WITH (msg) 
     SET current robot position
-    COMPUTE the difference between the current robot position
-    and the current goal position
+    COMPUTE the difference between the current robot position and the current goal position
     IF the difference IS LESS THAN 0.5 THEN
         STOP to compute the elapsed time
-    ENDIF
-ENDFUNCTION
+    END IF
+END FUNCTION
 
 FUNCTION currentGoal WITH (msg)
     SET current goal position
-ENDFUNCTION
+END FUNCTION
 
 FUNCTION userInterface 
-    WHILE user does not quit
+    WHILE user input is not to quit
         TAKE user input through the keyboard
-        EXEC corresponding task
-    ENDWHILE
-ENDFUNCTION
+        EXECUTE corresponding task
+    END WHILE
+END FUNCTION
 
 FUNCTION main WITH (argc, argv)
     INITIALIZE the node "final_robot"
@@ -153,7 +155,8 @@ FUNCTION main WITH (argc, argv)
     CALL ros::waitForShutdown
 
     RETURN 0
-ENDFUNCTION
+END FUNCTION
+
 </code></pre>
 
 Look the pseudocode file final_robot_pseudocode for more details.<br>
