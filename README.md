@@ -159,7 +159,6 @@ END FUNCTION
 
 </code></pre>
 
-Look the pseudocode file final_robot_pseudocode for more details.<br>
 
 
 # Installing_and_Running
