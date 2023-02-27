@@ -19,7 +19,7 @@ Control of a robot in a simulated environment.
 </details>
 
 
-# Introduction
+## Introduction
 
 An overview of this program function.<br>
 
@@ -35,19 +35,19 @@ You can use the user interface to:
 </ol>
 
 The map is this one:<br>
-## Gazebo:
+### Gazebo:
 <p align="center">
 <img src="https://user-images.githubusercontent.com/94115975/221689972-e9425967-7ca6-4488-aab5-f66a1d31d0a5.png" width="900" height="500">
 </p>
 
-## Rviz:
+### Rviz:
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/94115975/221690077-f9f397e6-4ba1-4c01-b25a-99ee7c71c638.png" width="900" height="500">
 </p>
 
 
-# Installing_and_Running
+## Installing_and_Running
 
 Open the terminal, and download this repository:
 
@@ -68,7 +68,7 @@ Now we can type:
 
 
 
-# How_it_works
+## How_it_works
 
 The program use the launch file "simulation_gmapping.launch" to run the simulated environment, and the launch file "move_base.launch" to run the action move_base that provides several topics, including:
 <ul>
@@ -110,7 +110,7 @@ You can change 3 constant values to modify some aspect of the program:
         <li>MAX_TIME: maximum time to reach a goal (microseconds).</li>
     </ul>
 
-## PseudoCode
+### PseudoCode
 A short description of the program behavior is this one:
 <pre><code>
 FUNCTION manualDriving
@@ -181,11 +181,11 @@ END FUNCTION
 
 </code></pre>
 
-# Simulation_and_Results
+## Simulation_and_Results
 ![rosgraph](https://user-images.githubusercontent.com/94115975/221713615-f280fb6c-fa7d-4b0c-bf68-9f28d757a033.png)
 
 
-# Robot_Movement_Improvement
+## Robot_Movement_Improvement
 
 The driving assistance can be improved by move the robot in the right direction when the user is driving 
 its against a wall, instead of just stop it.
