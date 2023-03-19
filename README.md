@@ -49,9 +49,20 @@ The map is this one:<br>
 
 ## Installing_and_Running
 
+Installing the ROS Navigation package: 
+<pre><code>sudo apt-get install ros-noetic-navigation</code></pre>
+
+Installing the ROS move_base package: 
+<pre><code>sudo apt-get install ros-noetic-move-base</code></pre>
+
+Installing the ROS Gmapping package: 
+<pre><code> sudo apt-get install ros-noetic-gmapping </code></pre>
+
+
 Open the terminal, and download this repository:
 
 <pre><code>git clone https://github.com/ParinazRmp/SLAM-with-Gmapping-and-Moving-Base.git </code></pre>
+
 
 Copy or move the folder final_assignment into the src folder of your ROS workspace.<br> 
 Go into the root folder of your ROS workspace and type: 
