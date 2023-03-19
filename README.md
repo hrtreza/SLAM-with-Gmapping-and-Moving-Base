@@ -79,8 +79,8 @@ The program use the launch file "simulation_gmapping.launch" to run the simulate
 
 There are 3 subscribers that run simultaneously thanks to a multi-thread architecture given by the ROS class AsyncSpinner:
 <ul>
-    <li>sub_pos: subscribes to the topic /move_base/feedback through the function currentStatus that continuosly update the current goal ID and check whether the robot has reached the goal position.</li>
-    <li>sub_goal: subscribes to the topic /move_base/goal through the function currentGoal that continuosly update the current goal coordinates.</li>
+    <li>sub_pos: subscribes to the topic /move_base/feedback through the function currentS tatus that Continuously update the current goal ID and check whether the robot has reached the goal position.</li>
+    <li>sub_goal: subscribes to the topic /move_base/goal through the function current Goal that Continuously update the current goal coordinates.</li>
     <li>sub_laser: subscribes to the topic /scan through the function drivingAssistance that continuosly take data by the laser scanner and, if the driving assistance is enabled, help the user to drive the robot stopping its if there is a wall too close in the current direction.</li>
 </ul>
 
