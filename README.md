@@ -81,7 +81,7 @@ There are 3 subscribers that run simultaneously thanks to a multi-thread archite
 <ul>
     <li>sub_pos: subscribes to the topic /move_base/feedback through the function currentS tatus that Continuously update the current goal ID and check whether the robot has reached the goal position.</li>
     <li>sub_goal: subscribes to the topic /move_base/goal through the function current Goal that Continuously update the current goal coordinates.</li>
-    <li>sub_laser: subscribes to the topic /scan through the function drivingAssistance that continuosly take data by the laser scanner and, if the driving assistance is enabled, help the user to drive the robot stopping its if there is a wall too close in the current direction.</li>
+    <li>sub_laser: subscribes to the topic /scan through the function drivingAssistance that Continuously take data by the laser scanner and, if the driving assistance is enabled, help the user to drive the robot stopping its if there is a wall too close in the current direction.</li>
 </ul>
 
 The robot can:
