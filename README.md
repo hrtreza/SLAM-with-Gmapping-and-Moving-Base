@@ -26,12 +26,12 @@ An overview of this program function.<br>
 
 <!-- In this project, it is supposed to move and control this robot autonomously without any collision with the walls surrounding the whole complex path. Meanwhile, it is also essential to have a simple user interface to communicate with the robot in the case of increasing/decreasing the speed, resetting the robot position, etc. In addition, it is worth mentioning that all requirements should not be considered in more than two nodes.
  -->
-This program manage a robot, endowed with laser scanners, which should move autonomously inside a map.<br>
+This program manages a robot, endowed with laser scanners, which should move autonomously inside a map.<br>
 You can use the user interface to:
 <ol>
-    <li>Let the robot to autonomously reach a x,y coordinate inserted by command line.</li>
+    <li>Let the robot autonomously reach a x,y coordinate inserted by the command line.</li>
     <li>Drive the robot with the keyboard.</li>
-    <li>Drive the robot with the keyboard availing of a simple driving assistance.</li>
+    <li>Drive the robot with the keyboard availing of simple driving assistance.</li>
 </ol>
 
 The map is this one:<br>
@@ -58,7 +58,7 @@ Go into the root folder of your ROS workspace and type:
 
 <pre><code>catkin_make</code></pre>
 
-By using the xterm tool, it is possible to launch all nodes using the launch file final_assignment.launch, but first we need to install xterm:
+By using the xterm tool, it is possible to launch all nodes using the launch file final_assignment.launch, but first, we need to install xterm:
 
 <pre><code>sudo apt install xterm</code></pre>
 
@@ -70,25 +70,25 @@ Now we can type:
 
 ## How_it_works
 
-The program use the launch file "simulation_gmapping.launch" to run the simulated environment, and the launch file "move_base.launch" to run the action move_base that provides several topics, including:
+The program uses the launch file "simulation_gmapping.launch" to run the simulated environment, and the launch file "move_base.launch" to run the action move_base that provides several topics, including:
 <ul>
     <li>move_base/goal to publish the goal position;</li>
     <li>move_base/feedback to receive the feedback;</li> 
     <li>move_base/cancel to cancel the current goal.</li>
 </ul>
 
-There are 3 subscribers that run simultaneously thanks to a multi-thread architecture given by the ROS class AsyncSpinner:
+3 subscribers run simultaneously thanks to a multi-thread architecture given by the ROS class AsyncSpinner:
 <ul>
-    <li>sub_pos: subscribes to the topic /move_base/feedback through the function currentS tatus that Continuously update the current goal ID and check whether the robot has reached the goal position.</li>
+    <li>sub_pos: subscribes to the topic /move_base/feedback through the function current Status that Continuously update the current goal ID and check whether the robot has reached the goal position.</li>
     <li>sub_goal: subscribes to the topic /move_base/goal through the function current Goal that Continuously update the current goal coordinates.</li>
-    <li>sub_laser: subscribes to the topic /scan through the function drivingAssistance that Continuously take data by the laser scanner and, if the driving assistance is enabled, help the user to drive the robot stopping its if there is a wall too close in the current direction.</li>
+    <li>sub_laser: subscribes to the topic /scan through the function drivingAssistance that Continuously takes data by the laser scanner and, if the driving assistance is enabled, helps the user to drive the robot stopping it if there is a wall too close in the current direction.</li>
 </ul>
 
 The robot can:
 <ol>
     <li>Autonomously reaching a goal position: 
         <ul>
-            <li>ask to the user to insert the coordinates x and y to reach;</li>
+            <li>ask the user to insert the coordinates x and y to reach;</li>
             <li>save the current time;</li>
             <li>set the frame_id to "map" (corresponding to the environment that is used) and the new coordinates to reach;</li>
             <li>publish the new goal to move_base/goal.</li>
@@ -97,13 +97,13 @@ The robot can:
     <li>Cancel the current goal:
         <ul>
             <li>take the current goal ID;</li>
-            <li>publish its to the topic move_base/cancel.</li>
+            <li>publish it to the topic move_base/cancel.</li>
         </ul>
     </li>
     <li>Be driven by the user through the keyboard (the list of commands is printed on the console).</li>
 </ol>
 
-You can change 3 constant values to modify some aspect of the program:
+You can change 3 constant values to modify some aspects of the program:
     <ul>
         <li>DIST: minimum distance from the wall with the driving assistance enabled.</li>
         <li>POS_ERROR: position range error.</li>
@@ -187,5 +187,4 @@ END FUNCTION
 
 ## Robot_Movement_Improvement
 
-The driving assistance can be improved by move the robot in the right direction when the user is driving 
-its against a wall, instead of just stop it.
+The driving assistance can be improved by moving the robot in the right direction when the user is driving against a wall, instead of just stopping it.
